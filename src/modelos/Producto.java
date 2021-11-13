@@ -146,12 +146,24 @@ public class Producto {
         this.netoGravado = this.costo + this.costo*this.margenGanancia;
     }
     
+    public void calcularNetoGravado(double costo, double margenGanancia){
+        this.netoGravado = costo + costo*margenGanancia;
+    }
+    
     private void calcularIva(){
-        this.iva = this.netoGravado * 0.2;
+        this.iva = this.netoGravado * 0.21;
+    }
+    
+    public void calcularIva(double netoGravado){
+        this.iva = netoGravado * 0.21;
     }
     
     private void calcularPrecioVenta(){
         this.precioVenta = this.netoGravado + this.iva;
+    }
+    
+    public void calcularPrecioVenta(double netoGravado, double iva){
+        this.precioVenta = netoGravado + iva;
     }
 
     @Override

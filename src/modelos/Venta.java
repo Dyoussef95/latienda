@@ -19,6 +19,10 @@ public class Venta {
     private int lineas[];
     private float importe;
     private Datos datos = Datos.getDatos();
+    
+    public Venta(){
+        
+    }
 
     public Venta(int id, String fecha, int[] lineas, float importe) {
         this.id = id;
@@ -68,6 +72,28 @@ public class Venta {
     @Override
     public String toString() {
         return "Venta{" + "id=" + id + ", fecha=" + fecha + ", lineas=" + lineas + ", importe=" + importe + '}';
+    }
+    
+    public double montoTotal(float subTotales[]){
+        double total = 2.5;
+        
+        return total;
+    }
+    
+    public boolean puedeSerAnonimo(double montoTotal){
+        boolean bandera=true;
+        if(montoTotal>10000){
+            bandera=false;
+        }
+        return bandera;
+    }
+    
+    public String determinarTipoComprobante(int cd){
+        String tipoComp="B";
+        if(cd==0 || cd==1){
+            tipoComp = "A";
+        }
+        return tipoComp;
     }
     
     public void guardarVenta(Venta venta){
